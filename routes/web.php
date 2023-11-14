@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\SpecialcategoryController;
+use App\Http\Controllers\Admin\SpecialpartController;
 use App\Http\Controllers\Admin\WhychoosseController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
@@ -51,14 +53,28 @@ Route::group(['prefix' => 'dashboard'],function(){
     Route::get('/item/delete/{id}',[ItemController::class, 'delete'])->name('delete.item');
 
 //Why Part
-Route::get('why/info', [WhychoosseController::class, 'whyInfo'])->name('why.info');
-Route::get('why/info/add', [WhychoosseController::class, 'add'])->name('why.info.add');
-Route::post('why/info/store', [WhychoosseController::class, 'store'])->name('why.info.store');
-Route::get('why/info/edit/{id}', [WhychoosseController::class, 'edit'])->name('why.info.edit');
-Route::post('why/info/update/{id}', [WhychoosseController::class, 'update'])->name('why.info.update');
-Route::get('why/info/delete/{id}', [WhychoosseController::class, 'delete'])->name('why.info.delete');
+    Route::get('why/info', [WhychoosseController::class, 'whyInfo'])->name('why.info');
+    Route::get('why/info/add', [WhychoosseController::class, 'add'])->name('why.info.add');
+    Route::post('why/info/store', [WhychoosseController::class, 'store'])->name('why.info.store');
+    Route::get('why/info/edit/{id}', [WhychoosseController::class, 'edit'])->name('why.info.edit');
+    Route::post('why/info/update/{id}', [WhychoosseController::class, 'update'])->name('why.info.update');
+    Route::get('why/info/delete/{id}', [WhychoosseController::class, 'delete'])->name('why.info.delete');
 
+//Special Category
+    Route::get('special/category', [SpecialcategoryController::class, 'specialCategory'])->name('special.category');
+    Route::get('special/category/add', [SpecialcategoryController::class, 'add'])->name('special.category.add');
+    Route::post('special/category/store', [SpecialcategoryController::class, 'store'])->name('special.category.store');
+    Route::get('special/category/edit/{id}', [SpecialcategoryController::class, 'edit'])->name('special.category.edit');
+    Route::post('special/category/update/{id}', [SpecialcategoryController::class, 'update'])->name('special.category.update');
+    Route::get('special/category/delete/{id}', [SpecialcategoryController::class, 'delete'])->name('special.category.delete');
 
+    //Special Items
+    Route::get('special/items', [SpecialpartController::class, 'specialItems'])->name('special.items');
+    Route::get('special/items/add', [SpecialpartController::class, 'add'])->name('special.items.add');
+    Route::post('special/items/store', [SpecialpartController::class, 'store'])->name('special.items.store');
+    Route::get('special/items/edit/{id}', [SpecialpartController::class, 'edit'])->name('special.items.edit');
+    Route::post('special/items/update/{id}', [SpecialpartController::class, 'update'])->name('special.items.update');
+    Route::get('special/items/delete/{id}', [SpecialpartController::class, 'delete'])->name('special.items.delete');
 
 });
 

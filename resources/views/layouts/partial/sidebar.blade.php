@@ -149,6 +149,54 @@
 
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Manage Special Category
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('special.category') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Special Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('special.category.add') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Special Category</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Manage Special Items
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('special.items') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Special Items</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('special.items.add') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Special Items</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
