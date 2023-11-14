@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\WhychoosseController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,14 @@ Route::group(['prefix' => 'dashboard'],function(){
     Route::get('/item/edit/{id}',[ItemController::class, 'edit'])->name('edit.item');
     Route::post('update/item/{id}', [ItemController::class, 'update'])->name('update.item');
     Route::get('/item/delete/{id}',[ItemController::class, 'delete'])->name('delete.item');
+
+//Why Part
+Route::get('why/info', [WhychoosseController::class, 'whyInfo'])->name('why.info');
+Route::get('why/info/add', [WhychoosseController::class, 'add'])->name('why.info.add');
+Route::post('why/info/store', [WhychoosseController::class, 'store'])->name('why.info.store');
+Route::get('why/info/edit/{id}', [WhychoosseController::class, 'edit'])->name('why.info.edit');
+Route::post('why/info/update/{id}', [WhychoosseController::class, 'update'])->name('why.info.update');
+Route::get('why/info/delete/{id}', [WhychoosseController::class, 'delete'])->name('why.info.delete');
 
 
 

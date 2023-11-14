@@ -81,7 +81,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Manage Menu
+                Manage Category
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -89,13 +89,13 @@
               <li class="nav-item">
                 <a href="{{ route('menu') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>All Menu</p>
+                  <p>All Category</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('add.slider') }}" class="nav-link">
+                <a href="{{ route('add.menu') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add New Menu</p>
+                  <p>Add New Category</p>
                 </a>
               </li>
 
@@ -120,6 +120,30 @@
                 <a href="{{ route('add.item') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New Item</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Manage Why Info Part
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('why.info') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Information</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('why.info.add') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add New Info</p>
                 </a>
               </li>
 
