@@ -77,6 +77,54 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Manage Menu
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('menu') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Menu</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('add.slider') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add New Menu</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Manage Item
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('item') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Item</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('add.item') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add New Item</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
