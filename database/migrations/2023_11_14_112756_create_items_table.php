@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('sub_title');
             $table->text('item_details')->nullable();
             $table->string('item_price');
+            $table->integer('status')->default(1);
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
             $table->timestamps();
         });
