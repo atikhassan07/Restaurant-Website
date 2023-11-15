@@ -197,6 +197,37 @@
 
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Website Setting
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('contact.info') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Update Contact Info</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('wesite.logo') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Update Logo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('add.social') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Social  Media</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

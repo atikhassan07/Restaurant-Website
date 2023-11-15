@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\ReservationController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\SpecialcategoryController;
 use App\Http\Controllers\Admin\SpecialpartController;
@@ -24,6 +26,10 @@ use Illuminate\Support\Facades\Route;
 
 // Forndend Routes
 Route::get('/', [FrontendController::class, 'index']);
+Route::post('reservation/store',[ReservationController::class, 'ReservationStore'])->name('reservation.store');
+
+
+
 
 Route::get('/dashboard',[AdminController::class, 'index']);
 
@@ -68,13 +74,26 @@ Route::group(['prefix' => 'dashboard'],function(){
     Route::post('special/category/update/{id}', [SpecialcategoryController::class, 'update'])->name('special.category.update');
     Route::get('special/category/delete/{id}', [SpecialcategoryController::class, 'delete'])->name('special.category.delete');
 
-    //Special Items
+//Special Items
     Route::get('special/items', [SpecialpartController::class, 'specialItems'])->name('special.items');
     Route::get('special/items/add', [SpecialpartController::class, 'add'])->name('special.items.add');
     Route::post('special/items/store', [SpecialpartController::class, 'store'])->name('special.items.store');
     Route::get('special/items/edit/{id}', [SpecialpartController::class, 'edit'])->name('special.items.edit');
     Route::post('special/items/update/{id}', [SpecialpartController::class, 'update'])->name('special.items.update');
     Route::get('special/items/delete/{id}', [SpecialpartController::class, 'delete'])->name('special.items.delete');
+
+    //Page Contact Information
+    Route::get('contact/info', [SettingController::class, 'contactInfo'])->name('contact.info');
+    Route::post('contact/info/update', [SettingController::class, 'update'])->name('contact.update');
+    Route::get('website/logo', [SettingController::class, 'logo'])->name('wesite.logo');
+    Route::post('update/logo', [SettingController::class, 'Updatelogo'])->name('update.logo');
+    Route::post('update/footer/logo', [SettingController::class, 'Updatelogo'])->name('update.footer.logo');
+    Route::get('add/social', [SettingController::class, 'addSocial'])->name('add.social');
+    Route::post('store/social', [SettingController::class, 'storeSocial'])->name('store.scoial');
+    Route::get('delete/social/{id}', [SettingController::class, 'deleteSocial'])->name('delete.scoial');
+
+
+
 
 });
 
