@@ -50,7 +50,7 @@
           </li> --}}
         <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+                <i class="fa-solid fa-sliders"></i>
               <p>
                 Manage Sliders
                 <i class="fas fa-angle-left right"></i>
@@ -79,7 +79,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+                <i class="fa-solid fa-list-check"></i>
               <p>
                 Manage Category
                 <i class="fas fa-angle-left right"></i>
@@ -103,7 +103,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+                <i class="fa-solid fa-burger"></i>
               <p>
                 Manage Item
                 <i class="fas fa-angle-left right"></i>
@@ -127,7 +127,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+                <i class="fa-solid fa-circle-info"></i>
               <p>
                 Manage Why Info Part
                 <i class="fas fa-angle-left right"></i>
@@ -151,7 +151,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+                <i class="fa-solid fa-list-check"></i>
               <p>
                 Manage Special Category
                 <i class="fas fa-angle-left right"></i>
@@ -175,7 +175,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+                <i class="fa-solid fa-burger"></i>
               <p>
                 Manage Special Items
                 <i class="fas fa-angle-left right"></i>
@@ -199,7 +199,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('gallery') }}" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+                <i class="fa-solid fa-image"></i>
               <p>
                 Add New Gallery
               </p>
@@ -208,7 +208,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+                <i class="fa-solid fa-gear"></i>
               <p>
                 Website Setting
                 <i class="fas fa-angle-left right"></i>
