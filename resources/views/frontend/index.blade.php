@@ -390,14 +390,14 @@
           <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
 
-        <form action="{{ route('reservation.store') }}" method="post"  class="php-email-form">
+        <form action="{{ route('reservation.store') }}" method="post">
             @csrf
           <div class="row">
             <div class="col-lg-4 col-md-6 form-group">
               <input type="text" name="name" class="form-control"  placeholder="Your Name">
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" >
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" >
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
               <input type="text" class="form-control" name="phone"  placeholder="Your Phone">
@@ -416,7 +416,15 @@
             <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
           </div>
 
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-2">
+                <div class="mt-3">
+                    <div class="text-center"><button type="submit" class="btn btn-warning form-control p-3">Book Table</button></div>
+                </div>
+            </div>
+            <div class="col-lg-5"></div>
+        </div>
         </form>
 
       </div>
@@ -704,27 +712,45 @@
           </div>
         </div>
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <form action="{{ route('store.contact') }}" method="post"  >
+            @csrf
           <div class="row">
+                <div class="p-3">
+                @if(Session::has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alart">
+                        <strong>Success!</strong>{{Session::get('success')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                </div>
             <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control"  placeholder="Your Name">
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="email" placeholder="Your Email">
             </div>
           </div>
-          <div class="form-group mt-3">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          <div class="row">
+            <div class="form-group mt-3 col-md-6">
+                <input type="text" class="form-control" name="subject" placeholder="Subject">
+              </div>
+              <div class="form-group mt-3 col-md-6">
+                <input type="number" class="form-control" name="phone" placeholder="Phone Number">
+              </div>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
           </div>
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-2">
+                    <div class="mt-3">
+                        <div class="text-center"><button type="submit" class="btn btn-warning form-control p-3">Send Message</button></div>
+                    </div>
+                </div>
+                <div class="col-lg-5"></div>
+            </div>
         </form>
 
       </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ReservationController;
@@ -27,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 // Forndend Routes
 Route::get('/', [FrontendController::class, 'index']);
 Route::post('reservation/store',[ReservationController::class, 'ReservationStore'])->name('reservation.store');
+Route::post('/contact/store', [ContactController::class, 'storeContacts'])->name('store.contact');
 
 
 
@@ -91,8 +93,6 @@ Route::group(['prefix' => 'dashboard'],function(){
     Route::get('add/social', [SettingController::class, 'addSocial'])->name('add.social');
     Route::post('store/social', [SettingController::class, 'storeSocial'])->name('store.scoial');
     Route::get('delete/social/{id}', [SettingController::class, 'deleteSocial'])->name('delete.scoial');
-
-
 
 
 });
