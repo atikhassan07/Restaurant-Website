@@ -202,7 +202,7 @@
       </div>
     </section><!-- End Whu Us Section -->
 
-    <!-- ======= Menu Section ======= -->
+    <!-- ======= Menu Section Done======= -->
     <section id="menu" class="menu">
       <div class="container">
 
@@ -241,7 +241,7 @@
       </div>
     </section><!-- End Menu Section -->
 
-    <!-- ======= Specials Section ======= -->
+    <!-- ======= Specials Section Done======= -->
     <section id="specials" class="specials">
       <div class="container">
 
@@ -381,7 +381,7 @@
       </div>
     </section><!-- End Events Section -->
 
-    <!-- ======= Book A Table Section ======= -->
+    <!-- ======= Book A Table Section Done======= -->
     <section id="book-a-table" class="book-a-table">
       <div class="container">
 
@@ -393,23 +393,61 @@
         <form action="{{ route('reservation.store') }}" method="post">
             @csrf
           <div class="row">
+            <div class="p-3">
+                @if(Session::has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alart">
+                        <strong>Success!</strong>{{Session::get('success')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                </div>
             <div class="col-lg-4 col-md-6 form-group">
-              <input type="text" name="name" class="form-control"  placeholder="Your Name">
+              <input type="text" name="name" class="form-control"  placeholder="Your Name" value="{{ old('name') }}">
+              <div class="mt-2">
+                @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" >
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" value="{{ old('email') }}">
+              <div class="mt-2">
+                @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
-              <input type="text" class="form-control" name="phone"  placeholder="Your Phone">
+              <input type="text" class="form-control" name="phone"  placeholder="Your Phone" value="{{ old('phone') }}">
+              <div class="mt-2">
+                @error('phone')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="date" name="date" class="form-control"  placeholder="Date">
+              <input type="date" name="date" class="form-control"  placeholder="Date" value="{{ old('date') }}">
+              <div class="mt-2">
+                @error('date')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="time" class="form-control" name="time"  placeholder="Time">
+              <input type="time" class="form-control" name="time"  placeholder="Time" value="{{ old('time') }}">
+              <div class="mt-2">
+                @error('time')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="number" class="form-control" name="people"  placeholder="# of people">
+              <input type="number" class="form-control" name="people"  placeholder="# of people"  value="{{ old('people') }}">
+              <div class="mt-2">
+                @error('people')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
             </div>
           </div>
           <div class="form-group mt-3">
@@ -440,67 +478,75 @@
         </div>
 
         <div class="row g-0">
-
+            {{-- @foreach ($gallaries as $gallery)
+            <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+                  <a href="{{ asset('uploads/gallery') }}/{{ $gallery->image }}" class="gallery-lightbox">
+                    <img src="{{ asset('uploads/gallery') }}/{{ $gallery->image }}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+            @endforeach --}}
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
+              <a href="{{ asset('frontend') }}/assets/img/gallery/gallery-1.jpg" class="gallery-lightbox">
+                <img src="{{ asset('frontend') }}/assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
+              <a href="{{ asset('frontend') }}/assets/img/gallery/gallery-2.jpg" class="gallery-lightbox">
+                <img src="{{ asset('frontend') }}/assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
+              <a href="{{ asset('frontend') }}/assets/img/gallery/gallery-3.jpg" class="gallery-lightbox">
+                <img src="{{ asset('frontend') }}/assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
+              <a href="{{ asset('frontend') }}/assets/img/gallery/gallery-4.jpg" class="gallery-lightbox">
+                <img src="{{ asset('frontend') }}/assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
+              <a href="{{ asset('frontend') }}/assets/img/gallery/gallery-5.jpg" class="gallery-lightbox">
+                <img src="{{ asset('frontend') }}/assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
+              <a href="{{ asset('frontend') }}/assets/img/gallery/gallery-6.jpg" class="gallery-lightbox">
+                <img src="{{ asset('frontend') }}/assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
+              <a href="{{ asset('frontend') }}/assets/img/gallery/gallery-7.jpg" class="gallery-lightbox">
+                <img src="{{ asset('frontend') }}/assets/img/gallery/gallery-7.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
-                <img src="assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
+              <a href="{{ asset('frontend') }}/assets/img/gallery/gallery-8.jpg" class="gallery-lightbox">
+                <img src="{{ asset('frontend') }}/assets/img/gallery/gallery-8.jpg" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -668,7 +714,7 @@
       </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Contact Section ======= -->
+    <!-- ======= Contact Section Done======= -->
     <section id="contact" class="contact">
       <div class="container">
 
@@ -725,17 +771,37 @@
                 </div>
             <div class="col-md-6 form-group">
               <input type="text" name="name" class="form-control"  placeholder="Your Name">
+              <div class="mt-2">
+                @error('name')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
               <input type="email" class="form-control" name="email" placeholder="Your Email">
+              <div class="mt-2">
+                @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="form-group mt-3 col-md-6">
                 <input type="text" class="form-control" name="subject" placeholder="Subject">
+                <div class="mt-2">
+                    @error('subject')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
               </div>
               <div class="form-group mt-3 col-md-6">
                 <input type="number" class="form-control" name="phone" placeholder="Phone Number">
+                <div class="mt-2">
+                    @error('phone')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                  </div>
               </div>
           </div>
           <div class="form-group mt-3">

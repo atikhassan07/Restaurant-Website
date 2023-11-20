@@ -197,7 +197,15 @@
 
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('gallery') }}" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Add New Gallery
+              </p>
+            </a>
 
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contactinfo;
+use App\Models\Gallery;
 use App\Models\Item;
 use App\Models\Logo;
 use App\Models\Menu;
@@ -22,6 +23,7 @@ class FrontendController extends Controller
         $special_items = Specialpart::where('status',1)->get();
         $contactInfo = Contactinfo::where('id',1)->first();
         $social = Social::all();
+        $gallaries = Gallery::where('status',1)->get();
 
         return view('frontend.index',[
             'menus' => $menus,
@@ -31,11 +33,9 @@ class FrontendController extends Controller
             'special_items' => $special_items,
             'contactInfo' => $contactInfo,
             'social' => $social,
+            'gallaries' => $gallaries,
         ]);
     }
 
-    public function ReservationStore(Request $request)
-    {
-        return back();
-    }
+
 }

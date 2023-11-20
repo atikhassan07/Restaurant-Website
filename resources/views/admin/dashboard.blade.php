@@ -25,17 +25,17 @@
                 </tr>
               </thead>
               <tbody>
-                {{-- @foreach ($users as $key=>$user)
+                @foreach ($reservations as $key=>$reservation)
                 <tr>
                     <td>{{ $key+1 }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->phone }}</td>
+                    <td>{{ $reservation->name }}</td>
+                    <td>{{ $reservation->email }}</td>
+                    <td>{{ $reservation->phone }}</td>
                     <td>
-                      --
+                     <a href="{{ route('reservation.single.view',$reservation->id) }}" class="btn btn-success btn-xs"><i class="fa fa-eye"></i></a>
                     </td>
                   </tr>
-                @endforeach --}}
+                @endforeach
               </tbody>
             </table>
           </div>
